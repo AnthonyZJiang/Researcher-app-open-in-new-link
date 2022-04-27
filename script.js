@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Researcher-app open article in new tab
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      1.0
 // @description  Add open article in new tab link to the paper
-// @author       You
+// @author       Anthony Jiang
 // @match        https://www.researcher-app.com/feed/journal*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=researcher-app.com
 // @grant        none

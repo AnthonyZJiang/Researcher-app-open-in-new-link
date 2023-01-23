@@ -11,7 +11,7 @@
 
 function addPaperLink(node) {
     const paperId = node.getAttribute('x-track-detail').split(':')[1].split('}')[0];
-    node.firstChild.innerHTML += `<a href="${'/paper/' + paperId}" target="_blank" class="${node.firstChild.firstChild.getAttribute('class')}">open article in new tab</a>`
+    node.firstChild.innerHTML += `<a href="${'/paper/' + paperId.replace(',','')}" target="_blank" class="${node.firstChild.firstChild.getAttribute('class')}">open article in new tab</a>`
 }
 
 (function() {
@@ -21,7 +21,7 @@ function addPaperLink(node) {
             if (mutation.type === 'childList') {
                 for (const node of mutation.addedNodes) {
                     try {
-                        if (node.getAttribute('x-track-id') === 'paper' && document.location.href.endsWith('feed/all')) {
+                        if (node.getAttribute('x-track-id') === 'paper') {
                             addPaperLink(node);
                         }
                     } catch (err) {
